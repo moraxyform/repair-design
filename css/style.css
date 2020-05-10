@@ -365,7 +365,7 @@ template {
 }
 
 .logo {
-  cursor: pointer;
+  display: inline-block;
   color: #E3B873;
   text-transform: uppercase;
 }
