@@ -1,6 +1,8 @@
  const {src,dest,watch} = require('gulp');
  const browserSync = require('browser-sync').create();
  const sass = require('gulp-sass');
+ const gulp = require('gulp');
+ const autoprefixer = require('gulp-autoprefixer');
 
  // Static server
  function bs() {
@@ -12,14 +14,22 @@
      });
      watch("./*.html").on('change', browserSync.reload);
      watch("./sass/**/*.sass", serveSass);
+     watch("./sass/**/*.scss", serveSass);
      watch("./js/*.js").on('change', browserSync.reload);
  };
 
  function serveSass() {
-     return src("./sass/**/*.sass")
+     return src("./sass/**/*.sass","./sass/**/*.scss")
          pipe(sass())
          pipe(dest("./css"))
          pipe(browserSync.stream());
  };
 
  exports.serve = bs;
+ exports.default = () => (
+    gulp.src('src/app.css')
+        .pipe(autoprefixer({
+            cascade: false
+        }))
+        .pipe(gulp.dest('dist'))
+);

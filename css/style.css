@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Futura Book';
+  src: url("../fontsuturauturaBookC.woff") format("woff"), url("../fontsuturauturaBookC.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: wrap;
+}
+
+@font-face {
+  font-family: 'Futura Demi';
+  src: url("../fontsuturauturaDemiC.woff") format("woff"), url("../fontsuturauturaDemiC.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: wrap;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -365,7 +381,6 @@ template {
 }
 
 .logo {
-  display: inline-block;
   color: #E3B873;
   text-transform: uppercase;
 }
@@ -385,6 +400,46 @@ template {
   margin-right: 45px;
 }
 
+.hero {
+  position: relative;
+  background: #131313 url("../img/hero-bg.jpg") no-repeat center/cover;
+  height: 100vh;
+  color: #fff;
+}
+
+.hero__instagram {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: 80px;
+  height: 100%;
+}
+
+.instagram {
+  background-color: #131313;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.instagram__link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #E3B873;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.title {
+  margin: 0;
+}
+
 .button {
   padding: 13px 20px;
   border: none;
@@ -398,7 +453,7 @@ template {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Futura Book', sans-serif;
   font-size: 14px;
 }
 /*# sourceMappingURL=style.css.map */
