@@ -395,7 +395,7 @@ template {
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
-  margin-right: 40px;
+  margin-right: 2.85rem;
   -webkit-transition: color 0.2;
   transition: color 0.2;
 }
@@ -449,11 +449,12 @@ template {
 
 .hero__content {
   position: relative;
-  max-width: 670px;
+  max-width: 47.85rem;
+  margin-left: 4.28rem;
 }
 
 .hero__text {
-  font-size: 22px;
+  font-size: 1.57rem;
   max-width: 506px;
 }
 
@@ -479,8 +480,8 @@ template {
   font-weight: 400;
   font-size: 12px;
   font-family: Yeseva One;
-  min-width: 247px;
-  min-height: 97px;
+  min-width: 17.6rem;
+  min-height: 6.92rem;
   background-color: #131313;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -546,7 +547,7 @@ template {
   margin: 0;
   font-family: 'Yeseva One', cursive;
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 2.857rem;
   font-weight: 400;
 }
 
@@ -555,6 +556,7 @@ template {
 }
 
 .button {
+  font-size: 0.93rem;
   border: none;
   border-radius: 2px;
   text-transform: uppercase;
@@ -591,9 +593,13 @@ template {
           box-sizing: border-box;
 }
 
+html {
+  font-size: 14;
+}
+
 body {
   font-family: 'Futura Book', sans-serif;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 .section-title__heading {
@@ -622,5 +628,70 @@ body {
   height: 2px;
   background-color: #E3B873;
   margin: 0 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 12px;
+  }
+  .nav__item {
+    margin-right: 1rem;
+  }
+  .header, .hero {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .nav {
+    display: none;
+  }
+  .hero__instagram {
+    display: none;
+  }
+  .hero__content {
+    margin-left: 0;
+  }
+  .header, .hero {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .contacts__phone {
+    margin-right: 0;
+    color: #fff;
+    border-bottom: none;
+  }
+  .contacts__button {
+    display: none;
+  }
+  .title {
+    font-size: 1.64rem;
+  }
+  .hero__scroll-down {
+    display: none;
+  }
+  .hero__content {
+    max-width: 22.86rem;
+  }
+  .hero__text {
+    font-size: 1.29rem;
+    margin-bottom: 2.28rem;
+  }
+  .hero__button {
+    display: block;
+    min-width: 22.86rem;
+    margin-bottom: 1.85rem;
+  }
+  .header, .hero {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-height: 520px) {
+  .hero__scroll-down {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
