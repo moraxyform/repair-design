@@ -466,6 +466,9 @@ template {
   position: absolute;
   left: 0;
   bottom: 0;
+  font-weight: 400;
+  font-size: 12px;
+  font-family: Yeseva One;
   min-width: 247px;
   min-height: 97px;
   background-color: #131313;
