@@ -409,7 +409,14 @@ template {
 }
 
 .contacts__phone {
+  text-decoration: none;
+  border-bottom: 1px solid #E3B873;
   margin-right: 45px;
+}
+
+.contacts__button {
+  height: 37px;
+  width: 161px;
 }
 
 .hero {
@@ -451,6 +458,8 @@ template {
 }
 
 .hero__button {
+  width: 207px;
+  height: 51px;
   margin-right: 20px;
 }
 
@@ -545,7 +554,6 @@ template {
 }
 
 .button {
-  padding: 13px 20px;
   border: none;
   border-radius: 2px;
   text-transform: uppercase;
