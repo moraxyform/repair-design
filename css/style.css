@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Futura Book';
-  src: url("../fontsuturauturaBookC.woff") format("woff"), url("../fontsuturauturaBookC.woff2") format("woff");
+  src: url("../fonts/futura/FuturaBookC.woff") format("woff"), url("../fonts/futura/FuturaBookC.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: wrap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Futura Demi';
-  src: url("../fontsuturauturaDemiC.woff") format("woff"), url("../fontsuturauturaDemiC.woff2") format("woff");
+  src: url("../fonts/futura/FuturaDemiC.woff") format("woff"), url("../fonts/futura/FuturaDemiC.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: wrap;
@@ -534,6 +534,7 @@ template {
   font-family: 'Yeseva One', cursive;
   text-transform: uppercase;
   font-size: 40px;
+  font-weight: 400;
 }
 
 .title--primary {
@@ -583,13 +584,13 @@ body {
   font-size: 14px;
 }
 
-.section__title__heading {
+.section-title__heading {
   text-align: center;
   text-transform: uppercase;
   font-family: 'Yeseva One', cursive;
 }
 
-.section__title__image {
+.section-title__image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -601,7 +602,7 @@ body {
           align-items: center;
 }
 
-.section__title__image::after, .section__title__image::before {
+.section-title__image::after, .section-title__image::before {
   display: inline-block;
   vertical-align: text-top;
   content: '';
