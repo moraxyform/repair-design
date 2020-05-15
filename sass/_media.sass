@@ -1,11 +1,52 @@
 @media screen and ( max-width: 1200px  )
   html
-    font-size: 12px
+    font-size: 13px
+  .header
+    max-width: 100%
+    .menu__contacts
+      display: flex
+      justify-content: space-between
+      align-items: center
+      .contacts__phone
+        font-size: 13px
+        width: 100%
+
+      .button
+        font-size: 11px
+        text-align: center
+        margin-right: 5%
+        padding: 2% 5%
+        width: 70%
+  .container
+    .logo
+      font-size: 12px
+      margin-left: 30px
   .nav
     &__item
-      margin-right: 1rem
-  .header,.hero
-    padding: 1rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 0
+    font-size: 12px
+  .hero
+    width: 100%
+    padding: 0 10%
+    &__content
+      padding-left: 2rem
+    .container
+      .button
+        font-size: 13px
+
+// тут адаптив
+  .row
+    flex-direction: column
+    align-items: center
+  .types
+    &__card
+      margin-bottom: 5rem
+  .card
+    &__text
+      margin-left: 0
 @media screen and ( max-width: 992px )
   .nav
     display: none
@@ -13,10 +54,15 @@
     &__instagram
       display: none
     &__content
+      width: 90vh
       margin-left: 0
   .header,.hero
     padding: 1rem
 @media screen and ( max-width: 768px )
+  .types
+    max-width: 100%
+    .container
+      max-width: 100%
   .contacts
     &__phone
       margin-right: 0
@@ -27,6 +73,7 @@
   .title
     font-size: 1.64rem
   .hero
+    max-width: 100%
     &__scroll-down
       display: none
     &__content
@@ -36,11 +83,29 @@
       margin-bottom: 2.28rem
     &__button
       display: block
-      min-width: 22.86rem
       margin-bottom: 1.85rem
   .header,.hero
     padding: 1rem
 @media screen and ( max-width: 570px )
+  .header
+    .contacts__phone
+      justify-content: center
+      align-items: center
+      padding: 5px 5px
+      font-size: 12px
+  .container
+    .logo
+      font-size: 12px
+  .hero
+    max-width: 100%
+    &__content
+      align-items: center
+      justify-content: space-around
+      max-width: 100%
+    .container
+      max-width: 100%
+      .button
+        font-size: 13px
   .row
     flex-direction: column
     align-items: center
@@ -52,6 +117,8 @@
       margin-left: 0
   
 @media screen and ( max-width: 570px )
+  html
+    font-size: 14px
   .contacts
     &__phone
       margin-right: 0
@@ -71,11 +138,12 @@
       margin-bottom: 2.28rem
     &__button
       display: block
-      min-width: 22.86rem
       margin-bottom: 1.85rem
   .header,.hero
     padding: 1rem
-@media screen and ( max-width: 320px )
+@media screen and ( max-width: 375px )
+  html
+    font-size: 14px
   .contacts
     &__phone
       margin-right: 0
@@ -83,9 +151,38 @@
       border-bottom: none
     &__button
       display: none
-  .title
-    font-size: 1.64rem
   .hero
+    &__scroll-down
+      display: none
+    &__content
+      max-width: 100%
+    &__text
+      font-size: 1.29rem
+      margin-bottom: 2.28rem
+    &__button
+      display: block
+      margin-bottom: 1.85rem
+  .header,.hero
+    padding: 1rem 
+@media screen and ( max-width: 320px )
+  .header
+    .contacts__phone
+      justify-content: center
+      align-items: center
+      padding: 5px 5px
+      font-size: 12px
+  .container
+    .logo
+      font-size: 12px
+  .contacts
+    &__phone
+      margin-right: 0
+      color: $light
+      border-bottom: none
+    &__button
+      display: none
+  .hero
+    max-width: 100%
     &__scroll-down
       display: none
     &__content
@@ -95,7 +192,6 @@
       margin-bottom: 2.28rem
     &__button
       display: block
-      min-width: 22.86rem
       margin-bottom: 1.85rem
   .header,.hero
     padding: 1rem 
