@@ -1,3 +1,10 @@
+@media screen and ( max-width: 1280px )
+  .header
+    .menu
+      &__contacts
+        .button
+          margin-right: 10px
+  
 @media screen and ( max-width: 1200px  )
   html
     font-size: 13px
@@ -10,20 +17,18 @@
       .contacts__phone
         font-size: 13px
         width: 100%
+        border: none
+        color: $light
 
       .button
-        font-size: 11px
-        text-align: center
-        margin-right: 5%
-        padding: 2% 5%
-        width: 70%
+        display: none
   .container
     .logo
       font-size: 12px
       margin-left: 30px
   .nav
     &__item
-    display: flex
+    display: none
     justify-content: space-between
     align-items: center
     margin: 0
@@ -144,11 +149,15 @@
 @media screen and ( max-width: 375px )
   html
     font-size: 14px
+  .header
+    .logo
+      font-size: 9px
   .contacts
     &__phone
       margin-right: 0
       color: $light
       border-bottom: none
+      font-size: 9px
     &__button
       display: none
   .hero
@@ -165,15 +174,17 @@
   .header,.hero
     padding: 1rem 
 @media screen and ( max-width: 320px )
+  html
+    font-size: 11px
   .header
     .contacts__phone
       justify-content: center
       align-items: center
       padding: 5px 5px
-      font-size: 12px
+      font-size: 8px
   .container
     .logo
-      font-size: 12px
+      font-size: 9px
   .contacts
     &__phone
       margin-right: 0
@@ -195,6 +206,17 @@
       margin-bottom: 1.85rem
   .header,.hero
     padding: 1rem 
+  .types
+    .row
+      flex-direction: column
+      align-items: center
+    .types
+      &__card
+        margin-bottom: 5rem
+    .card
+      &__text
+        margin-left: 0
+
 @media screen and ( max-height: 520px )
   .hero
     &__scroll-down

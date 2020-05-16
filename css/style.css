@@ -891,6 +891,12 @@ img {
       align-self: flex-end;
 }
 
+@media screen and (max-width: 1280px) {
+  .header .menu__contacts .button {
+    margin-right: 10px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   html {
     font-size: 13px;
@@ -912,22 +918,18 @@ img {
   .header .menu__contacts .contacts__phone {
     font-size: 13px;
     width: 100%;
+    border: none;
+    color: #fff;
   }
   .header .menu__contacts .button {
-    font-size: 11px;
-    text-align: center;
-    margin-right: 5%;
-    padding: 2% 5%;
-    width: 70%;
+    display: none;
   }
   .container .logo {
     font-size: 12px;
     margin-left: 30px;
   }
   .nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -1091,10 +1093,14 @@ img {
   html {
     font-size: 14px;
   }
+  .header .logo {
+    font-size: 9px;
+  }
   .contacts__phone {
     margin-right: 0;
     color: #fff;
     border-bottom: none;
+    font-size: 9px;
   }
   .contacts__button {
     display: none;
@@ -1119,6 +1125,9 @@ img {
 }
 
 @media screen and (max-width: 320px) {
+  html {
+    font-size: 11px;
+  }
   .header .contacts__phone {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1127,10 +1136,10 @@ img {
         -ms-flex-align: center;
             align-items: center;
     padding: 5px 5px;
-    font-size: 12px;
+    font-size: 8px;
   }
   .container .logo {
-    font-size: 12px;
+    font-size: 9px;
   }
   .contacts__phone {
     margin-right: 0;
@@ -1159,6 +1168,21 @@ img {
   }
   .header, .hero {
     padding: 1rem;
+  }
+  .types .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .types .types__card {
+    margin-bottom: 5rem;
+  }
+  .types .card__text {
+    margin-left: 0;
   }
 }
 
