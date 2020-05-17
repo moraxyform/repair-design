@@ -30,19 +30,19 @@ $(document).ready(function () {
       closeBtn = $('.modal__close');
 
   modalBtn.on('click', function() {
-    modal.toggleСlass('modal--visible');
+    modal.toggleClass('modal--visible');
   });
   closeBtn.on('click', function () {
     modal.toggleClass('modal--visible')
   });
-  window.on('click', function(e) {
-    if(e.target == modal) {
-    modal.classList.toggle('modal--visible')
+  $(modal).on('click', function(e) {
+    if(e.target === this) {
+    modal.toggleClass('modal--visible')
     }
   })
-  document.on('keyup', function(e) {
+  $(document).on('keyup', function(e) {
     if(e.keyCode === 27) {
-      modal.classList.remove('modal--visible')
+      modal.removeClass('modal--visible')
     }
   })
 });

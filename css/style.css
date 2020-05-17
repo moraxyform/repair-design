@@ -914,6 +914,8 @@ img {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin: 0;
+    padding: 0;
   }
   .header .menu__contacts .contacts__phone {
     font-size: 13px;
@@ -926,22 +928,17 @@ img {
   }
   .container .logo {
     font-size: 12px;
-    margin-left: 30px;
+    margin-left: 35px;
   }
   .nav {
-    display: none;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin: 0;
+    margin-right: 10px;
     font-size: 12px;
   }
   .hero {
     width: 100%;
-    padding: 0 10%;
   }
   .hero__content {
     padding-left: 2rem;
@@ -967,7 +964,33 @@ img {
   }
 }
 
+@media screen and (max-width: 860px) {
+  .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .types__card {
+    margin-bottom: 5rem;
+  }
+  .card {
+    margin-bottom: 60px;
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+  .card__text {
+    margin-left: 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
   .types {
     max-width: 100%;
   }
@@ -982,9 +1005,6 @@ img {
   .contacts__button {
     display: none;
   }
-  .title {
-    font-size: 1.64rem;
-  }
   .hero {
     max-width: 100%;
   }
@@ -992,10 +1012,11 @@ img {
     display: none;
   }
   .hero__content {
-    max-width: 22.86rem;
+    margin: 0;
+    padding: 0;
+    max-width: 420px;
   }
   .hero__text {
-    font-size: 1.29rem;
     margin-bottom: 2.28rem;
   }
   .hero__button {
@@ -1004,6 +1025,21 @@ img {
   }
   .header, .hero {
     padding: 1rem;
+  }
+  .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .types__card {
+    margin-bottom: 5rem;
+  }
+  .card__text {
+    margin-left: 0;
   }
 }
 
@@ -1020,6 +1056,7 @@ img {
   }
   .container .logo {
     font-size: 12px;
+    margin: 0;
   }
   .hero {
     max-width: 100%;
