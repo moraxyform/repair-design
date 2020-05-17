@@ -363,6 +363,27 @@ template {
   width: 100%;
 }
 
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.col {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -456,6 +477,17 @@ template {
   background-color: rgba(19, 19, 19, 0.7);
 }
 
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3.46rem;
+  background-color: #131313;
+}
+
 .hero__title {
   margin-bottom: 1rem;
 }
@@ -489,6 +521,7 @@ template {
 }
 
 .hero__scroll-down {
+  z-index: 3;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -584,23 +617,6 @@ template {
   margin-bottom: 2rem;
 }
 
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.col {
-  -ms-flex-preferred-size: 32%;
-      flex-basis: 32%;
-}
-
 .card__text {
   position: relative;
   max-width: 23.6rem;
@@ -655,7 +671,6 @@ template {
   font-size: 20px;
   font-weight: normal;
   font-family: 'Futura Book',sans-serif;
-  text-align: center;
   line-height: 1.9rem;
   margin-bottom: 2.7rem;
 }
@@ -775,14 +790,57 @@ img {
 }
 
 .section {
-  padding: 60px 0;
+  padding: 60px;
+}
+
+.section--dark {
+  background-color: #131313;
+}
+
+.section--dark p {
+  color: #fff;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.section-title--left {
+  text-align: left;
 }
 
 .section-title__heading {
   font-weight: normal;
-  text-align: center;
   text-transform: uppercase;
   font-family: 'Yeseva One', cursive;
+  line-height: 136.6%;
+}
+
+.section-title__heading--primary {
+  color: #E3B873;
+}
+
+.section-title__word {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-title__word::after {
+  content: '';
+  width: 90px;
+  height: 2px;
+  background-color: #E3B873;
+  margin-left: 2rem;
+}
+
+.section-title__text--left {
+  font-size: 1.2rem;
+  line-height: 2.07rem;
+  max-width: 31.57rem;
 }
 
 .section-title__image {
@@ -965,6 +1023,25 @@ img {
 }
 
 @media screen and (max-width: 860px) {
+  .section {
+    padding: 0;
+  }
+  .section--dark {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+  .section--dark .col-50 {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .card__pricetag {
+    padding-right: 30px;
+  }
+  .swiper-slide img {
+    margin-top: 35px;
+  }
   .row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -985,6 +1062,10 @@ img {
   .card__text {
     margin-left: 0;
   }
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -1227,5 +1308,65 @@ img {
   .hero__scroll-down {
     display: none;
   }
+}
+
+.swiper-slide {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 81px;
+}
+
+.swiper-slide__text {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  line-height: 20px;
+  padding-bottom: 2rem;
+}
+
+.swiper-slide__heading {
+  font-size: 1.285rem;
+  line-height: 1.78rem;
+  font-family: 'Yeseva One', cursive;
+  color: #E3B873;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 0.64rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  bottom: 0;
+  top: auto;
+  width: 42px;
+  height: 14px;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+  display: none;
+}
+
+.swiper-button-prev {
+  left: 0;
+  background: url("../img/arrow-left.svg") no-repeat center;
+}
+
+.swiper-button-next {
+  background: url("../img/arrow-right.svg") no-repeat center;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  width: auto;
+  bottom: -1.5px;
 }
 /*# sourceMappingURL=style.css.map */

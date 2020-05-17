@@ -64,6 +64,22 @@
   .header,.hero
     padding: 1rem
 @media screen and ( max-width: 860px )
+  .section
+    padding: 0
+    &--dark 
+      padding-right: 18px;
+      padding-left: 18px;
+      .col-50
+        width: 100%;
+        margin: 0
+        padding: 0
+        overflow: hidden
+  .card
+    &__pricetag
+      padding-right: 30px
+  .swiper-slide
+    img
+      margin-top: 35px
   .row
     flex-direction: column
     align-items: center
@@ -76,6 +92,8 @@
     margin-right: 18px
     &__text
       margin-left: 0
+.swiper-container-horizontal>.swiper-pagination-bullets
+  width: 100%
   
 @media screen and ( max-width: 768px )
   html
