@@ -949,6 +949,12 @@ img {
       align-self: flex-end;
 }
 
+@media screen and (max-width: 1300px) {
+  .card {
+    margin-right: 30px;
+  }
+}
+
 @media screen and (max-width: 1280px) {
   .header .menu__contacts .button {
     margin-right: 10px;
@@ -1239,6 +1245,10 @@ img {
   }
   .header, .hero {
     padding: 1rem;
+  }
+  .swiper-slide__heading {
+    margin-right: 15px;
+    font-size: 13px;
   }
 }
 
