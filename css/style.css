@@ -604,6 +604,110 @@ template {
   color: #E3B873;
 }
 
+.control__section-title {
+  margin-bottom: 2.214rem;
+  margin-top: -30rem;
+}
+
+.control__video {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  margin-bottom: 4.428rem;
+  max-width: 58.357rem;
+  min-height: 31rem;
+  background: #131313 url("../img/video-image.jpg") center no-repeat;
+  -webkit-box-shadow: 0px 20px 50px rgba(19, 19, 19, 0.15);
+          box-shadow: 0px 20px 50px rgba(19, 19, 19, 0.15);
+}
+
+.control__video img {
+  cursor: pointer;
+}
+
+.control__video::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 19, 19, 0.8);
+}
+
+.control__text {
+  max-width: 40.785rem;
+  margin: auto;
+  margin-bottom: 4.285rem;
+  text-align: center;
+  font-size: 1.428rem;
+  line-height: 2.4rem;
+}
+
+.control__text::before {
+  content: '';
+  display: block;
+  margin: auto;
+  margin-bottom: 2.5rem;
+  width: 55px;
+  height: 2px;
+  background-color: #E3B873;
+  border-radius: 30px;
+}
+
+.control__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 55rem;
+  margin: auto;
+}
+
+.control__input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+.control__label {
+  margin-bottom: -7px;
+  color: #363636;
+}
+
+.control__button {
+  padding: 1.2857rem 4.785rem;
+  height: 51px;
+  width: 200px;
+}
+
+.control__policy {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-top: 1.2rem;
+}
+
+.control__policy--label {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.video__play {
+  position: relative;
+  margin: auto;
+}
+
 .types {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -727,19 +831,19 @@ template {
   padding: 0.5rem 0;
 }
 
-.input::-webkit-input-placeholder {
+.input--light::-webkit-input-placeholder {
   color: #fff;
 }
 
-.input:-ms-input-placeholder {
+.input--light:-ms-input-placeholder {
   color: #fff;
 }
 
-.input::-ms-input-placeholder {
+.input--light::-ms-input-placeholder {
   color: #fff;
 }
 
-.input::placeholder {
+.input--light::placeholder {
   color: #fff;
 }
 
@@ -807,6 +911,10 @@ img {
 
 .section-title--left {
   text-align: left;
+}
+
+.section-title--light {
+  color: #fff;
 }
 
 .section-title__heading {
@@ -1068,6 +1176,51 @@ img {
   .card__text {
     margin-left: 0;
   }
+  .control {
+    padding-right: 18px;
+    padding-left: 18px;
+    background-color: #131313;
+    color: #fff;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .control__label {
+    color: #fff;
+  }
+  .control__label {
+    color: #959595;
+  }
+  .control__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  .control__form__policy--label {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .control__button {
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-top: 60px;
+    margin-bottom: -22px;
+  }
+  .section-title__heading {
+    margin-top: 80px;
+  }
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets {
@@ -1318,6 +1471,10 @@ img {
   .hero__scroll-down {
     display: none;
   }
+}
+
+.projects {
+  padding-bottom: 30rem;
 }
 
 .swiper-slide {
