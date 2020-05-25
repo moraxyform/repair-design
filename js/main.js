@@ -71,13 +71,22 @@ $(document).ready(function () {
 
   //Валидация формы
   $('.modal__form').validate({
+    errorElement: "div",
     errorClass: "invalid",
+    errorPlacement: function(even,types) {
+      if ("checkbox" == types.attr("type")) {
+        return types.next("label").append(even);
+      } else {
+        even.insertAfter($(types))
+      }
+    },
     rules: {
       userName: {
         required: true,
         minlength: 2
       },
       userPhone: "required",
+      policyCheckbox: "required",
       userEmail: {
         required: true,
         email: true
@@ -89,6 +98,7 @@ $(document).ready(function () {
         minlength: "Имя должно иметь не меньше двух символов"
       },
       userPhone: "Поле ввода номера телефона - обязательное",
+      policyCheckbox: "Подтвердите соглашение",
       userEmail: {
         required: "Поле ввода email - обязательное",
         email: "Название почты должно выглядеть примерно так: name@domain.com"
@@ -111,9 +121,114 @@ $(document).ready(function () {
       });
     }
   });
-
+  $('.control__form').validate({
+    errorElement: "div",
+    errorClass: "invalid",
+    errorPlacement: function(even,types) {
+      if ("checkbox" == types.attr("type")) {
+        return types.next("label").append(even);
+      } else {
+        even.insertAfter($(types))
+      }
+    },
+    rules: {
+      controlUserName: {
+        required: true,
+        minlength: 2
+      },
+      controlUserPhone: "required",
+      controlCheckbox: "required",
+      controlUserEmail: {
+        required: true,
+        email: true
+      }
+    },//Сообщения
+    messages: {
+      controlUserName: {
+        required: "Поле ввода имени - обязательное",
+        minlength: "Имя должно иметь не меньше двух символов"
+      },
+      controlUserPhone: "Поле ввода номера телефона - обязательное",
+      controlCheckbox: "Подтвердите соглашение",
+      controlUserEmail: {
+        required: "Поле ввода email - обязательное",
+        email: "Название почты должно выглядеть примерно так: name@domain.com"
+      }
+    }
+  });
+  $('.footer__form').validate({
+    errorElement: "div",
+    errorClass: "invalid",
+    errorPlacement: function(even,types) {
+      if ("checkbox" == types.attr("type")) {
+        return types.next("label").append(even);
+      } else {
+        even.insertAfter($(types))
+      }
+    },
+    rules: {
+      footerName: {
+        required: true,
+        minlength: 2
+      },
+      footerPhone: "required",
+      footerCheckbox: "required",
+      footerQuestion: "required",
+      footerEmail: {
+        required: true,
+        email: true
+      }
+    },//Сообщения
+    messages: {
+      footerName: {
+        required: "Поле ввода имени - обязательное",
+        minlength: "Имя должно иметь не меньше двух символов"
+      },
+      footerPhone: "Поле ввода номера телефона - обязательное",
+      footerQuestion: "Задайте свой вопрос",
+      footerCheckbox: "Подтвердите соглашение",
+      footerEmail: {
+        required: "Поле ввода email - обязательное",
+        email: "Название почты должно выглядеть примерно так: name@domain.com"
+      }
+    }
+  });
   //маска для номера телефона
 
-  $('[type=tel]').mask('+7(000) 00-00-000', {placeholder: "+7 (___) __-__-___"})
+  $('[type=tel]').mask('+7(000) 00-00-000', {placeholder: "Ваш номер телефона:"})
 
+  ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
+            center: [47.244729, 39.723187],
+            zoom: 9
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+
+        // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            hintContent: 'Наш офис',
+            balloonContent: 'Вход со двора'
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: 'img/marker.svg',
+            // Размеры метки.
+            iconImageSize: [30, 42],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-5, -38]
+        });
+
+
+
+    myMap.geoObjects
+        .add(myPlacemark);
+});
 });

@@ -43,13 +43,17 @@
     display: flex
     flex-direction: column
   &__input
+    width: 100%
     color: $light
     &-group
       display: flex
       flex-direction: column
       margin-bottom: 3.428rem
-    &:last-of-type
-      margin-bottom: 1.1rem
+      position: relative
+      &:nth-child(3)
+        margin-bottom: 15px
+      &:nth-child(4) .invalid
+        left: 27px
   &__policy
     margin-bottom: 2.7rem
   &__button
