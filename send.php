@@ -1,17 +1,18 @@
 <?php
 
 $userName = $_POST['userName'];
-$userPhone = $_POST['userPhone'];
 $userEmail = $_POST['userEmail'];
-
+$userPhone = $_POST['userPhone'];
+$userQuestion = $_POST['userQuestion'];
 
 // Load Composer's autoloader
-require 'phpmailer/Exception.php';
-require 'phpmailer/PHPmailer.php';
+require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
+require 'phpmailer/Exception.php';
 
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer\PHPMailer\PHPMailer();
+$mail->CharSet = 'utf-8';
 
 try {
     //Server settings
@@ -21,24 +22,24 @@ try {
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'repairsolution228@gmail.com';                     // SMTP username
     $mail->Password   = 'repairdesign';                               // SMTP password
-    $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+    $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+    $mail->Port       = 465;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('repairsolution228@gmail.com', 'Альберт');
-    $mail->addAddress('a-bessilin@mail.ru', 'Joe User');     // Add a recipient
+    $mail->setFrom('repairsolution228@gmail.com','Альберт');
+    $mail->addAddress('a-bessilin@mail.ru');     // Add a recipient
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Новая заяка с сайта';
-    $mail->Body    = "Имя пользователя: ${userName}, его телефон: ${userPhone}, и его почтовый ящик: ${userEmail} ";
+    $mail->Subject = 'Новая заявка с сайта';
+    $mail->Body    = "Имя пользователя: ${userName},его сообщение: ${userQuestion}, его телефон: ${userPhone}. Его почта: ${userEmail}";
 
-    if ($mail->send()) {
+	if ($mail->send()) {
         echo "Всё ок!";
     } else {
         echo "Письмо не отправлено. Код ошибки: {$mail->ErrorInfo}";
     }
     
 } catch (Exception $e) {
-    echo "Письмо не отправлено. Код ошибки: {$mail->ErrorInfo}";
+    echo "Письмо не отправлено, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
 }
