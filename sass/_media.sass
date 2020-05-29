@@ -1,13 +1,26 @@
 @media screen and ( max-width: 1300px )
   .card
     margin-right: 30px
-  
+  .section
+    .row
+      padding-right: 18px;
+      padding-left: 18px;
+  .container
+    .logo
+      font-size: 12px
+      margin-left: 35px
 @media screen and ( max-width: 1280px )
   .header
     .menu
       &__contacts
         .button
           margin-right: 10px
+  .footer
+    .menu
+      &__contacts
+        .button
+          margin-right: 10px
+  
   
 @media screen and ( max-width: 1200px  )
   html
@@ -68,6 +81,9 @@
       margin-left: 0
   .header,.hero
     padding: 1rem
+  .card
+    .card__pricetag-types
+      padding: auto
 @media screen and ( max-width: 860px )
   .section
     padding: 0
@@ -128,10 +144,27 @@
     img 
       margin-top: -6rem
   .footer
+    background: $black
     &__menu
       display: none
-.swiper-container-horizontal>.swiper-pagination-bullets
-  width: 100%
+    &__content
+      display: flex
+      flex-direction: column
+      .map
+        width: 100%
+        order: 1
+        padding-bottom: 3rem
+      .footer__heading-text
+        order: 2
+        font-size: 18px
+        justify-content: center
+        align-items: center
+        .breakdown
+          display: none
+        .breakpoint
+          display: block
+
+
   
 @media screen and ( max-width: 768px )
   html
@@ -253,6 +286,8 @@
     .video
       &__play
         height: 100px
+  .ymap-container
+    min-height: 17rem
 @media screen and ( max-width: 375px )
   html
     font-size: 14px
@@ -286,6 +321,8 @@
   .control
     &__button
       width: 100%
+  .ymap-container
+    min-height: 14rem
 
 
 @media screen and ( max-width: 320px )

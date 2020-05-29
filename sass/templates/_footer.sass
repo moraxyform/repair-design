@@ -43,9 +43,83 @@
     padding: 18px 67px
   &__menu
     background-color: $dark
-    padding: 4.285rem 0
+    padding: 48px 0
   &__map
     max-width: 925px
     margin: auto
     margin-bottom: 4rem
     min-height: 465px
+  &__heading-text
+    text-align: center
+    font-family: 'Yeseva One', cursive
+    font-weight: normal
+    font-size: 20px
+    text-transform: uppercase
+    color: $primary
+    line-height: 28px
+    p
+      color: $primary
+      a
+        text-decoration: none
+        color: $primary
+    .breakdown
+      display: block
+  .footer__icons
+    margin-bottom: 2rem
+    margin-top: 2rem
+    .mail-icon
+      background: url('../img/mail-icon.svg') no-repeat
+      height: 30px
+      width: 30px
+      border: none
+      cursor: pointer
+      margin-right: 15px
+    .instagram-icon
+      background: url('../img/instagram-icon.svg') no-repeat
+      height: 30px
+      width: 30px
+      border: none
+      cursor: pointer
+
+
+
+  .contacts
+    &__button
+      height: 37px
+      min-width: 161px
+  .footer__button-up
+    position: relative
+    .footer__scroll-up
+      margin-top: -50px
+      right: 0
+      z-index: 3
+      position: absolute
+      font-weight: normal
+      font-size: 12px
+      font-family: Yeseva One;
+      min-width: 17.6rem
+      min-height: 6.92rem
+      background-color: $dark
+      display: flex
+      justify-content: center
+      align-items: center
+      text-transform: uppercase
+      text-decoration: none
+      color: $light
+      a
+        color: $light
+        text-decoration: none
+        display: flex
+        justify-content: center
+        align-items: center
+        &::after
+          content: ''
+          background: url('../img/up.png') no-repeat center
+          height: 30px
+          width: 30px
+          border: 2px solid $primary
+          border-radius: 50%
+          margin-left: 12px
+      
+    
+    

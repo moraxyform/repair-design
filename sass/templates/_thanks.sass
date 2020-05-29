@@ -11,8 +11,8 @@
 
 .popup 
 	position: absolute
-	width: 509px
-	height: 509px
+	width: 400px
+	height: 200px
 	display: flex
 	justify-content: center
 	align-items: center
@@ -25,6 +25,9 @@
 	font-weight: normal
 	font-style: normal
 	color: $light
+	@media screen and ( max-width: 375px )
+		width: 340px	
+		
 
 
 .close-popup 

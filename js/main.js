@@ -84,10 +84,10 @@ $(document).ready(function () {
       userName: {
         required: true,
         minlength: 2,
-        maxlength: 10
+        maxlength: 15
       },
       userPhone: {
-        minlength: 10,
+        minlength: 17,
         required: !0
       },
       policyCheckbox: "required",
@@ -126,6 +126,7 @@ $(document).ready(function () {
         },
         error: function (response) {
           console.error('ошибка запроса' + responce);
+          ym('64423564', 'reachGoal', 'button'); return true;
         }
       });
     }
@@ -167,7 +168,7 @@ $(document).ready(function () {
       },
       userPhone: {
         required: !0,
-        minlength: 10
+        minlength: 17
       },
       policyCheckbox: "required",
     }, //Сообщения
@@ -197,6 +198,7 @@ $(document).ready(function () {
         },
         error: function (response) {
           console.error('ошибка запроса' + responce);
+          ym('64423564', 'reachGoal', 'button'); return true;
         }
       });
     }
@@ -238,7 +240,7 @@ $(document).ready(function () {
       },
       userPhone: {
         required: !0,
-        minlength: 10
+        minlength: 17
       },
       policyCheckbox: "required",
       userQuestion: "required",
@@ -278,6 +280,7 @@ $(document).ready(function () {
         },
         error: function (response) {
           console.error('ошибка запроса' + responce);
+          ym('64423564', 'reachGoal', 'button'); return true;
         }
       });
     }
@@ -310,7 +313,30 @@ $(document).ready(function () {
     placeholder: "Ваш номер телефона:"
   })
 
-  
+  var player;
+  $('.video__play').on('click',     function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '465',
+      width: '100%',
+      videoId: 'RHzzLqJWqHs',
+      events: {
+        'onReady': videoPlay,
+      }
+    });
+  })
+
+
+  function videoPlay(event) {
+    event.target.playVideo();
+   }
+
+  $(function(){
+    $("a[href^='#']").click(function(){
+            var _href = $(this).attr("href");
+            $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+            return false;
+    });
+});
 
 
 
@@ -327,7 +353,7 @@ var myMapTemp, myPlacemarkTemp;
 function init () {
   var myMapTemp = new ymaps.Map("map", {
     center: [47.244729, 39.723187], // координаты центра на карте
-    zoom: 7, // коэффициент приближения карты
+    zoom: 15, // коэффициент приближения карты
     controls: ['zoomControl', 'fullscreenControl'] // выбираем только те функции, которые необходимы при использовании
   });
   var myPlacemarkTemp = new ymaps.Placemark([47.244729, 39.723187], {
@@ -344,6 +370,7 @@ function init () {
       // её "ножки" (точки привязки).
       iconImageOffset: [-25, -50],
   });
+  myMapTemp.behaviors.disable('scrollZoom');
   myMapTemp.geoObjects.add(myPlacemarkTemp); // помещаем флажок на карту
  
   // Получаем первый экземпляр коллекции слоев, потом первый слой коллекции
@@ -438,5 +465,11 @@ $(function() {
   ymap();
  
 });
+
+
+
+
+
+
 
 });
